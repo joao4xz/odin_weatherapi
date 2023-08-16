@@ -1,2 +1,2 @@
 # odin_weatherapi
-"The Odin Project" Weathe API project.
+"The Odin Project" Weather API project.
