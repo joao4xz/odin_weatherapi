@@ -6,6 +6,17 @@
     <title>Weather API</title>
   </head>
   <body>
-    <div>Hello World!</div>
+    <div id="main-container">
+      <div id="current-container">
+        <form action="#">
+          <input type="text" id="search-input" placeholder="Search Location" />
+          <button type="submit" id="search-button">Search</button>
+          <button type="button" id="cf-button">C</button>
+        </form>
+        <div id="current-data"></div>
+      </div>
+      <div id="forecast-container"></div>
+      <div id="history-container"></div>
+    </div>
   </body>
 </html>

@@ -1,5 +1,70 @@
-$color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-div {
-  color: $color;
+$card-color: #a3d5ff;
+$body-color: #d9f0ff;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: $body-color;
+}
+
+#main-container {
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 2fr;
+  gap: 2rem;
+  padding: 5rem;
+  & > div {
+    background-color: $card-color;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+}
+
+#history-container {
+  grid-column: 1 / span 2;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+#search-input {
+  flex: 1;
+  background-color: $body-color;
+  height: 28px;
+  border: none;
+  border-radius: 0.3rem 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+
+#search-button {
+  all: unset;
+  cursor: pointer;
+  background-color: #306bac;
+  color: white;
+  height: 28px;
+  padding: 0 1rem;
+  margin-right: 0.8rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+#cf-button {
+  all: unset;
+  cursor: pointer;
+  background-color: #189ad3;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 1.3rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
 }
