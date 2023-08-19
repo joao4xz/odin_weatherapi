@@ -2,6 +2,9 @@
 
 $card-color: #a3d5ff;
 $body-color: #d9f0ff;
+$search-color: #306bac;
+$temp-color: #189ad3;
+$text-color: #313131;
 
 * {
   margin: 0;
@@ -11,6 +14,12 @@ $body-color: #d9f0ff;
 
 body {
   background-color: $body-color;
+}
+
+#current-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
 }
 
 #main-container {
@@ -41,15 +50,22 @@ form {
   flex: 1;
   background-color: $body-color;
   height: 28px;
-  border: none;
   border-radius: 0.3rem 0 0 0.3rem;
   font-size: 1.3rem;
+}
+
+.input-border {
+  border: none;
+}
+
+.error {
+  border: solid 1px red;
 }
 
 #search-button {
   all: unset;
   cursor: pointer;
-  background-color: #306bac;
+  background-color: $search-color;
   color: white;
   height: 28px;
   padding: 0 1rem;
@@ -60,11 +76,38 @@ form {
 #cf-button {
   all: unset;
   cursor: pointer;
-  background-color: #189ad3;
+  background-color: $temp-color;
   color: white;
   text-align: center;
   font-size: 1.2rem;
   width: 1.3rem;
   padding: 0.2rem;
   border-radius: 1rem;
+}
+
+#current-data {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $text-color;
+}
+
+#current-city {
+  font-size: 3rem;
+}
+#current-temp {
+  font-size: 4rem;
+}
+
+#phrase-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  #current-phrase {
+    font-size: 1.4rem;
+  }
+  #current-icon {
+    width: 64px;
+  }
 }

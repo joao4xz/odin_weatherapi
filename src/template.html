@@ -8,12 +8,24 @@
   <body>
     <div id="main-container">
       <div id="current-container">
-        <form action="#">
-          <input type="text" id="search-input" placeholder="Search Location" />
-          <button type="submit" id="search-button">Search</button>
+        <form action="">
+          <input
+            type="text"
+            id="search-input"
+            class="input-border"
+            placeholder="Search city"
+          />
+          <button type="button" id="search-button">Search</button>
           <button type="button" id="cf-button">C</button>
         </form>
-        <div id="current-data"></div>
+        <div id="current-data">
+          <h1 id="current-city"></h1>
+          <p id="current-temp"></p>
+          <div id="phrase-container">
+            <p id="current-phrase"></p>
+            <img id="current-icon" src="#" />
+          </div>
+        </div>
       </div>
       <div id="forecast-container"></div>
       <div id="history-container"></div>
