@@ -22,6 +22,13 @@ body {
   gap: 1.5rem;
 }
 
+#forecast-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.5rem;
+  color: $text-color;
+}
+
 #main-container {
   height: 100vh;
   display: grid;
@@ -100,8 +107,9 @@ form {
   font-size: 4rem;
 }
 
-#phrase-container {
+.phrase-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.3rem;
   #current-phrase {
@@ -109,5 +117,56 @@ form {
   }
   #current-icon {
     width: 64px;
+  }
+}
+
+#forecast-items {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  min-width: 300px;
+}
+
+.forecast-date {
+  background-color: $search-color;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.2rem 0;
+}
+
+.left {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.right {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.item {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto 1fr;
+}
+
+.temp-info {
+  justify-self: center;
+  text-align: center;
+  .phrase-container {
+    gap: 0.1rem;
+  }
+  .city {
+    font-size: 2rem;
+  }
+  .temp {
+    font-size: 3rem;
+  }
+  .phrase {
+    font-size: 1.2rem;
+  }
+  .icon {
+    width: 48px;
   }
 }

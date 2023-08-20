@@ -18,16 +18,53 @@
           <button type="button" id="search-button">Search</button>
           <button type="button" id="cf-button">C</button>
         </form>
-        <div id="current-data">
-          <h1 id="current-city"></h1>
-          <p id="current-temp"></p>
-          <div id="phrase-container">
-            <p id="current-phrase"></p>
-            <img id="current-icon" src="#" />
+        <div id="current-data" class="item">
+          <h1 id="current-city" class="city"></h1>
+          <p id="current-temp" class="temp"></p>
+          <div class="phrase-container">
+            <p id="current-phrase" class="phrase"></p>
+            <img id="current-icon" class="icon" src="#" />
           </div>
         </div>
       </div>
-      <div id="forecast-container"></div>
+      <div id="forecast-container">
+        <h1>Forecast</h1>
+        <div id="forecast-items">
+          <div id="forecast-today" class="item">
+            <div id="today-date" class="forecast-date left"></div>
+            <div class="temp-info">
+              <h1 id="today-city" class="city"></h1>
+              <p id="today-temp" class="temp"></p>
+              <div class="phrase-container">
+                <p id="today-phrase" class="phrase"></p>
+                <img id="today-icon" class="icon" src="#" />
+              </div>
+            </div>
+          </div>
+          <div id="forecast-tomorrow" class="item">
+            <div id="tomorrow-date" class="forecast-date"></div>
+            <div class="temp-info">
+              <h1 id="tomorrow-city" class="city"></h1>
+              <p id="tomorrow-temp" class="temp"></p>
+              <div class="phrase-container">
+                <p id="tomorrow-phrase" class="phrase"></p>
+                <img id="tomorrow-icon" class="icon" src="#" />
+              </div>
+            </div>
+          </div>
+          <div id="forecast-after-tomorrow" class="item">
+            <div id="after-date" class="forecast-date right"></div>
+            <div class="temp-info">
+              <h1 id="after-city" class="city"></h1>
+              <p id="after-temp" class="temp"></p>
+              <div class="phrase-container">
+                <p id="after-phrase" class="phrase"></p>
+                <img id="after-icon" class="icon" src="#" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="history-container"></div>
     </div>
   </body>
