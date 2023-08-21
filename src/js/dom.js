@@ -270,12 +270,85 @@ function getLastDays() {
   return previousDays;
 }
 
+function loadAnimation() {
+  const containers = [
+    document.getElementById('current-container'),
+    document.getElementById('forecast-container'),
+    document.getElementById('history-container'),
+  ];
+
+  containers.forEach((container) => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '50px');
+    svg.setAttribute('height', '50px');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid');
+    svg.classList.add('loader');
+    svg.style.margin = 'auto';
+    svg.style.background = '#a3d5ff';
+    svg.style.display = 'block';
+
+    const circle = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'circle'
+    );
+    circle.setAttribute('cx', '50');
+    circle.setAttribute('cy', '50');
+    circle.setAttribute('fill', 'none');
+    circle.setAttribute('stroke', '#189ad3');
+    circle.setAttribute('stroke-width', '10');
+    circle.setAttribute('r', '35');
+    circle.setAttribute(
+      'stroke-dasharray',
+      '164.93361431346415 56.97787143782138'
+    );
+
+    const animateTransform = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'animateTransform'
+    );
+    animateTransform.setAttribute('attributeName', 'transform');
+    animateTransform.setAttribute('type', 'rotate');
+    animateTransform.setAttribute('repeatCount', 'indefinite');
+    animateTransform.setAttribute('dur', '1s');
+    animateTransform.setAttribute('values', '0 50 50;360 50 50');
+    animateTransform.setAttribute('keyTimes', '0;1');
+
+    circle.appendChild(animateTransform);
+
+    svg.appendChild(circle);
+
+    container.appendChild(svg);
+  });
+
+  document.getElementById('current-data').classList.add('none');
+  document.getElementById('forecast-items').classList.add('none');
+  document.getElementById('history-items').classList.add('none');
+}
+
+function endAnimation() {
+  const currentData = document.getElementById('current-data');
+  const forecastItems = document.getElementById('forecast-items');
+  const historyItems = document.getElementById('history-items');
+
+  currentData.classList.remove('none');
+  forecastItems.classList.remove('none');
+  historyItems.classList.remove('none');
+
+  const loadingAnimations = document.querySelectorAll('.loader');
+  loadingAnimations.forEach((loader) => {
+    loader.remove();
+  });
+}
+
 export async function searchCity(cityName) {
   try {
+    loadAnimation();
     currentCityObject = await fetchCurrentCity(cityName);
     forecastCityObject = await fetchForecastCity(cityName);
     const lastDays = getLastDays();
     historyCityArray = await fetchHistoryCity(cityName, lastDays);
+    endAnimation();
     changeCurrentCity();
     changeForecastCities();
     changeHistoryCities();

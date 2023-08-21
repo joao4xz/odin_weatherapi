@@ -101,12 +101,14 @@ form {
   border-radius: 1rem;
 }
 
-#current-data {
+.current-data {
   align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: $text-color;
+  flex: 1;
+  min-width: 240px;
 }
 
 #current-city {
@@ -130,8 +132,8 @@ form {
   }
 }
 
-#forecast-items,
-#history-items {
+.forecast-items,
+.history-items {
   display: flex;
   justify-content: space-between;
   overflow: auto;
@@ -184,6 +186,10 @@ form {
   .icon {
     width: 48px;
   }
+}
+
+.none {
+  display: none;
 }
 
 @media (max-width: 920px) {
