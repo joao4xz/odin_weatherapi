@@ -63,6 +63,8 @@ form {
   height: 28px;
   border-radius: 0.3rem 0 0 0.3rem;
   font-size: 1.3rem;
+  width: 0;
+  min-width: 0;
 }
 
 .input-border {
@@ -109,6 +111,7 @@ form {
 
 #current-city {
   font-size: 3rem;
+  text-align: center;
 }
 #current-temp {
   font-size: 4rem;
@@ -170,6 +173,7 @@ form {
   }
   .city {
     font-size: 2rem;
+    text-align: center;
   }
   .temp {
     font-size: 3rem;
@@ -179,5 +183,43 @@ form {
   }
   .icon {
     width: 48px;
+  }
+}
+
+@media (max-width: 920px) {
+  #main-container {
+    grid-template: 1fr 1fr 1fr/ 1fr 2fr;
+    height: 100%;
+  }
+  #current-container {
+    grid-column: span 2;
+  }
+  #forecast-container {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 500px) {
+  #main-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #main-container {
+    grid-template: 1fr 3fr 5fr / 1fr 2fr;
+  }
+  #forecast-items,
+  #history-items {
+    flex-direction: column;
+    min-width: 240px;
+    overflow: hidden;
+  }
+  .item {
+    min-width: 240px;
+  }
+  .forecast-date,
+  .history-date {
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
   }
 }
